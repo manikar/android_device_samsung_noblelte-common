@@ -178,6 +178,9 @@ BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
 BOARD_KERNEL_SEPARATED_DT := true
 TARGET_CUSTOM_DTBTOOL := dtbhtoolExynos
 
+# Prebuilt kernel
+#TARGET_PREBUILT_KERNEL := device/samsung/noblelte-common/zImage
+
 # Manifest
 DEVICE_MANIFEST_FILE += device/samsung/noblelte-common/manifest.xml
 
