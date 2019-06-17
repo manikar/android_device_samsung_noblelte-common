@@ -20,7 +20,7 @@ cc_library_static {
 		"CameraParameters.cpp",
 	],
 	include_dirs: [
-		"device/samsung/zero-common/include"
+		"device/samsung/noblelte-common/include"
 	],
 }
 
@@ -60,7 +60,7 @@ cc_library_shared {
         "frameworks/native/libs/nativewindow/include",
         "frameworks/native/libs/arect/include",
         "frameworks/av/media/ndk/include",
-        "device/samsung/zero-common/include",
+        "device/samsung/noblelte-common/include",
     ],
 
     header_libs: [
