@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/samsung/zero-common
+LOCAL_PATH := device/samsung/noblelte-common
 
 BOARD_VENDOR := samsung
 
@@ -145,7 +145,7 @@ BOARD_USE_NON_CACHED_GRAPHICBUFFER := true
 ## LineageOS HW
 JAVA_SOURCE_OVERLAYS := \
     org.lineageos.hardware|hardware/samsung/lineagehw|**/*.java \
-    org.lineageos.hardware|device/samsung/zero-common/lineagehw|**/*.java
+    org.lineageos.hardware|device/samsung/noblelte-common/lineagehw|**/*.java
 
 # H/W composer
 BOARD_USES_PREBUILT_HWCOMPOSER := true
@@ -158,7 +158,7 @@ BOARD_OVERRIDE_RS_CPU_VARIANT_32 := cortex-a53.a57
 BOARD_OVERRIDE_RS_CPU_VARIANT_64 := cortex-a57
 
 # Releasetools - for resizing system filesystem
-TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/zero-common/releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/noblelte-common/releasetools
 
 # HDMI
 BOARD_HDMI_INCAPABLE := true
@@ -179,7 +179,7 @@ BOARD_KERNEL_SEPARATED_DT := true
 TARGET_CUSTOM_DTBTOOL := dtbhtoolExynos
 
 # Manifest
-DEVICE_MANIFEST_FILE += device/samsung/zero-common/manifest.xml
+DEVICE_MANIFEST_FILE += device/samsung/noblelte-common/manifest.xml
 
 #
 # Networking
@@ -250,14 +250,14 @@ TARGET_NO_SENSOR_PERMISSION_CHECK := true
 BOARD_USES_TRUST_KEYMASTER := true
 
 # Seccomp filters
-BOARD_SECCOMP_POLICY += device/samsung/zero-common/seccomp
+BOARD_SECCOMP_POLICY += device/samsung/noblelte-common/seccomp
 
 # Sepolicy
 # BOARD_SEPOLICY_DIRS := $(LOCAL_PATH)/sepolicy
 
 # TWRP
 ifneq ($(strip $(wildcard $(TOP)/bootable/recovery/variables.h)),)
--include device/samsung/zero-common/twrp.mk
+-include device/samsung/noblelte-common/twrp.mk
 endif
 
 # WFD
@@ -278,7 +278,7 @@ WIFI_DRIVER_FW_PATH_AP           := "/system/vendor/etc/wifi/bcmdhd_apsta.bin"
 WIFI_BAND                        := 802_11_ABG
 
 # inherit from the proprietary version
--include vendor/samsung/zero-common/BoardConfigVendor.mk
+-include vendor/samsung/noblelte-common/BoardConfigVendor.mk
 
 # inherit from the private proprietary version
--include vendor/samsung/zero-private/BoardConfigVendor.mk
+-include vendor/samsung/noblelte-private/BoardConfigVendor.mk

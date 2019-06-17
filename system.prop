@@ -1,5 +1,5 @@
 ###
-# BEGIN zero-common device-properties
+# BEGIN noblelte-common device-properties
 #
 # Copyright (C) 2016 The CyanogenMod Project
 # Copyright (C) 2017 The LineageOS Project
@@ -127,5 +127,5 @@ ro.adb.nonblocking_ffs=0
 persist.adb.nonblocking_ffs=0
 
 #
-# END zero device-properties
+# END noblelte-common device-properties
 ###
