@@ -48,8 +48,18 @@ enum device_variant {
     G925P,
     G925S,
     G925T,
-    G925W8
-	
+    G925W8,
+
+        /* Note 5 */
+    N920C,
+    N920G,
+    N920I,
+    N920S,
+    N920K,
+    N920L,
+    N920T,
+    N920W8
+
 };
 
 inline bool replace(string& str, const string& from, const string& to) {

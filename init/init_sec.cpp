@@ -56,10 +56,16 @@ void vendor_load_properties()
     string device_orig = base::GetProperty("ro.product.device", "");
     string bootloader = base::GetProperty("ro.bootloader", "");
 
+    if (platform != ANDROID_TARGET) {
+        return;
+    }
+
+    // Default variant unknown
+    device_variant variant = UNKNOWN;
+
     /*
      * Flat
      */
-    device_variant variant = UNKNOWN;
     if (bootloader.find("G920F") != string::npos) {
         if (device_orig != "zeroflteduo") {
             variant = G920F;
@@ -101,8 +107,6 @@ void vendor_load_properties()
         variant = G925T;
     } else if (bootloader.find("G925W8") != string::npos) {
         variant = G925W8;
-    } else {
-        return;
     }
 
     /*
@@ -111,6 +115,31 @@ void vendor_load_properties()
     if (bootloader.find("SCV31") != string::npos) {
         /* BIG, FAT TODO: ??? */
         variant = G925J;
+    }
+
+    /*
+     * Note 5
+     */
+    else if (bootloader.find("N920C") != string::npos) {
+        if (device_orig != "nobleltejv") {
+            variant = N920C;
+        }
+    } else if (bootloader.find("N920G") != string::npos) {
+        variant = N920G;
+    } else if (bootloader.find("N920I") != string::npos) {
+        variant = N920I;
+    } else if (bootloader.find("N920S") != string::npos) {
+        variant = N920S;
+    } else if (bootloader.find("N920K") != string::npos) {
+        variant = N920K;
+    } else if (bootloader.find("N920L") != string::npos) {
+        variant = N920L;
+    } else if (bootloader.find("N920T") != string::npos) {
+        variant = N920T;
+    } else if (bootloader.find("N920W8") != string::npos) {
+        variant = N920W8;
+    } else {
+        return;
     }
 
     string model, device, product;
@@ -239,6 +268,65 @@ void vendor_load_properties()
             model = "SM-G925W8";
             device = "zeroltecan";
             product = "zerolte";
+            break;
+
+        /*
+         * Note 5
+         */
+        case N920C:
+            /* nobleltejv */
+            model = "SM-N920C";
+            device = "nobleltejv";
+            product = "noblelte";
+            break;
+
+        case N920G:
+            /* nobleltedd */
+            model = "SM-N920G";
+            device = "nobleltedd";
+            product = "nobleltedd";
+            break;
+
+        case N920I:
+            /* nobleltedv */
+            model = "SM-N920I";
+            device = "nobleltedv";
+            product = "nobleltedv";
+            break;
+
+        case N920S:
+            /* noblelteskt */
+            model = "SM-N920S";
+            device = "noblelteskt";
+            product = "noblelteskt";
+            break;
+
+        case N920K:
+            /* nobleltektt */
+            model = "SM-N920K";
+            device = "nobleltektt";
+            product = "nobleltektt";
+            break;
+
+        case N920L:
+            /* nobleltelgt */
+            model = "SM-N920L";
+            device = "nobleltelgt";
+            product = "nobleltelgt";
+            break;
+
+        case N920T:
+            /* nobleltetmo */
+            model = "SM-N920T";
+            device = "nobleltetmo";
+            product = "nobleltetmo";
+            break;
+
+        case N920W8:
+            /* nobleltecan */
+            model = "SM-N920W8";
+            device = "nobleltecan";
+            product = "nobleltecan";
             break;
 
         default:
